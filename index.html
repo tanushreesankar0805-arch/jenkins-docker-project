@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CI/CD Pipeline Project</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff9ecf,#ffc7e8,#ffe5f3);
+    overflow:hidden;
+}
+
+.card{
+    width:700px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:25px;
+    padding:40px;
+    text-align:center;
+    color:#fff;
+    box-shadow:0 20px 50px rgba(0,0,0,.2);
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+h2{
+    color:#fff8b3;
+    margin-bottom:25px;
+}
+
+p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+.tech{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.tech span{
+    background:white;
+    color:#ff3f8e;
+    padding:12px 20px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.tech span:hover{
+    transform:translateY(-5px);
+    background:#ff3f8e;
+    color:white;
+}
+
+.footer{
+    margin-top:35px;
+    font-size:15px;
+    color:#fff;
+    opacity:.9;
+}
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.25);
+    animation:float 8s infinite ease-in-out;
+}
+
+.circle:nth-child(1){
+    width:180px;
+    height:180px;
+    top:-60px;
+    left:-60px;
+}
+
+.circle:nth-child(2){
+    width:120px;
+    height:120px;
+    bottom:40px;
+    right:50px;
+    animation-delay:2s;
+}
+
+.circle:nth-child(3){
+    width:90px;
+    height:90px;
+    bottom:120px;
+    left:100px;
+    animation-delay:4s;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-20px);
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+
+<div class="card">
+
+<h1>💖 CI/CD Pipeline 💖</h1>
+
+<h2>Successfully Deployed!</h2>
+
+<p>
+This webpage was automatically deployed using
+a complete DevOps CI/CD pipeline.
+</p>
+
+<div class="tech">
+<span>☁ AWS EC2</span>
+<span>⚙ Jenkins</span>
+<span>🐳 Docker</span>
+<span>🐙 GitHub</span>
+</div>
+
+<div class="footer">
+✨ Built & Deployed Automatically ✨
+</div>
+
+</div>
+
+</body>
+</html>
