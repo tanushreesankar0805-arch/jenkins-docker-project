@@ -20,9 +20,7 @@ pipeline {
 
                 sh '''
                 docker rm -f my-container || true
-
                 docker run -d -p 80:80 --name my-container my-app
-
                 '''
 
             }
