@@ -1,143 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CI/CD Pipeline Deployment</title>
+
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: "Poppins", sans-serif;
+    font-family:"Poppins", Arial, sans-serif;
 }
+
 body{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#020617,#0f4c81,#38bdf8);
+    background:
+    linear-gradient(135deg,#020617,#0f4c81,#38bdf8);
     overflow:hidden;
 }
 
-.card{
-    width:700px;
-    background:rgba(255,255,255,.15);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.3);
-    border-radius:25px;
-    padding:40px;
-    text-align:center;
-    color:#ffffff;
-    box-shadow:0 20px 50px rgba(0,0,0,.35);
-}
 
-h1{
-    font-size:42px;
-    margin-bottom:10px;
-}
-
-h2{
-    color:#7dd3fc;
-    margin-bottom:25px;
-}
-
-p{
-    font-size:18px;
-    line-height:1.8;
-}
-
-.tech{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-    margin-top:30px;
-}
-
-.tech span{
-    background:#ffffff;
-    color:#075985;
-    padding:12px 20px;
-    border-radius:30px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.tech span:hover{
-    transform:translateY(-5px);
-    background:#38bdf8;
-    color:#ffffff;
-}
-
-.footer{
-    margin-top:35px;
-    font-size:15px;
-    color:#e0f2fe;
-    opacity:.9;
-}
+/* Floating circles */
 
 .circle{
     position:absolute;
     border-radius:50%;
-    background:rgba(125,211,252,.25);
+    background:rgba(125,211,252,0.25);
     animation:float 8s infinite ease-in-out;
 }
 
 .circle:nth-child(1){
-    width:180px;
-    height:180px;
-    top:-60px;
-    left:-60px;
+    width:220px;
+    height:220px;
+    top:-80px;
+    left:-80px;
 }
 
 .circle:nth-child(2){
-    width:120px;
-    height:120px;
+    width:150px;
+    height:150px;
+    right:80px;
     bottom:40px;
-    right:50px;
     animation-delay:2s;
 }
 
 .circle:nth-child(3){
-    width:90px;
-    height:90px;
-    bottom:120px;
-    left:100px;
+    width:100px;
+    height:100px;
+    left:120px;
+    bottom:80px;
     animation-delay:4s;
 }
 
+
 @keyframes float{
+
     50%{
-        transform:translateY(-20px);
+        transform:translateY(-25px);
     }
+
 }
+
+
+/* Main card */
+
+.card{
+
+    width:750px;
+    padding:45px;
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(20px);
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,0.3);
+
+    text-align:center;
+
+    color:white;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,0.35);
+
+}
+
+
+/* Heading */
+
+h1{
+
+    font-size:45px;
+    letter-spacing:1px;
+    margin-bottom:15px;
+
+}
+
+
+h2{
+
+    color:#7dd3fc;
+    font-size:25px;
+    margin-bottom:25px;
+
+}
+
+
+/* Description */
+
+p{
+
+    font-size:18px;
+    line-height:1.8;
+    color:#e0f2fe;
+
+}
+
+
+/* Pipeline */
+
+.pipeline{
+
+    margin-top:35px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+
+.step{
+
+    background:white;
+
+    color:#075985;
+
+    padding:12px 18px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+.step:hover{
+
+    transform:translateY(-8px);
+
+    background:#38bdf8;
+
+    color:white;
+
+}
+
+
+/* Arrow */
+
+.arrow{
+
+    color:#7dd3fc;
+
+    font-size:25px;
+
+}
+
+
+/* Tech section */
+
+.tech{
+
+    margin-top:35px;
+
+}
+
+
+.tech h3{
+
+    margin-bottom:15px;
+
+    color:#bae6fd;
+
+}
+
+
+.tech span{
+
+    display:inline-block;
+
+    background:#082f49;
+
+    border:1px solid #38bdf8;
+
+    color:#e0f2fe;
+
+    padding:10px 18px;
+
+    margin:6px;
+
+    border-radius:25px;
+
+}
+
+
+/* Footer */
+
+.footer{
+
+    margin-top:35px;
+
+    font-size:15px;
+
+    color:#bae6fd;
+
+}
+
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="circle"></div>
 <div class="circle"></div>
 <div class="circle"></div>
+
+
 
 <div class="card">
 
-<h1> CI/CD Pipeline </h1>
 
-<h2>Successfully Deployed!</h2>
+<h1>
+🚀 CI/CD Pipeline
+</h1>
+
+
+<h2>
+Successfully Deployed on AWS
+</h2>
+
+
 
 <p>
-This webpage was automatically deployed using
-a complete DevOps CI/CD pipeline.
+
+This website is automatically deployed using a complete
+DevOps CI/CD pipeline with GitHub, Jenkins, Docker and AWS EC2.
+
 </p>
 
-<div class="tech">
-<span>☁ AWS EC2</span>
-<span>⚙ Jenkins</span>
-<span>🐳 Docker</span>
-<span>🐙 GitHub</span>
+
+
+<div class="pipeline">
+
+<div class="step">
+🐙 GitHub
 </div>
+
+<div class="arrow">
+→
+</div>
+
+
+<div class="step">
+⚙ Jenkins
+</div>
+
+
+<div class="arrow">
+→
+</div>
+
+
+<div class="step">
+🐳 Docker
+</div>
+
+
+<div class="arrow">
+→
+</div>
+
+
+<div class="step">
+☁ AWS EC2
+</div>
+
+
+</div>
+
+
+
+
+<div class="tech">
+
+<h3>
+Technologies Used
+</h3>
+
+
+<span>
+Amazon EC2
+</span>
+
+
+<span>
+Jenkins Pipeline
+</span>
+
+
+<span>
+Docker Container
+</span>
+
+
+<span>
+GitHub Webhook
+</span>
+
+
+<span>
+Nginx Server
+</span>
+
+
+</div>
+
+
+
 
 <div class="footer">
-✨ Built & Deployed Automatically ✨
-</div>
+
+✨ Built & Deployed Automatically Through CI/CD ✨
 
 </div>
+
+
+
+</div>
+
 
 </body>
+
 </html>
